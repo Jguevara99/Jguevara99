@@ -39,7 +39,7 @@
 
 <br>
 
-[## Academic Background:
+## Academic Background:
 
 [<img align="left" height="94px" width="94px" alt="Warpnet" src="https://media.licdn.com/dms/image/C4E0BAQG5HFi6nWrpQg/company-logo_200_200/0/1655119369480/grupo_uninter_logo?e=1709164800&v=beta&t=A_gJyj3OZmT1JZNQcxaIJY67jzxMEJMvcpxyq1CwmS0"/>](https://www.uninter.com/)
 **Software Engineering Undergraduate** \
@@ -51,7 +51,7 @@ Skills: `Agile Methodologies` `Requirements Engineering` `Software Architecture`
 **Full Stack Developer** \
 [**One Bit Code**](https://www.onebitcode.com/) • In progress \
 Skills: `HTML5` `CSS3` `SASS` `Flexbox` `GRID` `Bootstrap` `JavaScript` `Git` `GitHub` `TypeScript` `PostgreSQL` `NodeJs` `ExpressJS` `NextJs`
-`Bulma` `MongoDB` `ElectronJS`](url)
+`Bulma` `MongoDB` `ElectronJS`
 
 <br>
 
