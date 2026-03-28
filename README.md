@@ -1,67 +1,62 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=3670ff&size=35&center=true&vCenter=true&width=1000&lines=Welcome+to+my+GitHub+profile!;My+name+is+Jairo+Guevara;I'm+Software+Engineering+Student)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=3670ff&size=35&center=true&vCenter=true&width=1000&lines=Welcome+to+my+GitHub+profile!;My+name+is+Jairo+Guevara;I'm+a+Software+Engineering+Student)](https://git.io/typing-svg)
 
 <h3 align="center">"Talk is cheap. Show me the code"</h3>
 <h4 align="center">- Linus Torvalds -</h4>
 
-<br>
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Frontend%20Development-3670ff?style=for-the-badge" alt="Focus: Frontend Development" />
+  <img src="https://img.shields.io/badge/Learning-TypeScript%20%26%20Flutter-7a4cff?style=for-the-badge" alt="Learning TypeScript and Flutter" />
+</p>
 
-<div align="center" style="margin-bottom:200px">
- <img width=45% align="center" src="https://github-readme-stats.vercel.app/api?username=Jguevara99&theme=radical&show_icons=true" />
- <img width=40% align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jguevara99&layout=compact&theme=radical" />
+<div align="center">
+  <img width="45%" align="center" src="https://github-readme-stats.vercel.app/api?username=Jguevara99&theme=radical&show_icons=true" alt="GitHub stats" />
+  <img width="40%" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jguevara99&layout=compact&theme=radical" alt="Top languages" />
 </div>
 
+---
 
-<br>
+## 🚀 About me
 
-## Language and Tools
+- 🎓 Software Engineering student.
+- 💻 Focused on building responsive and user-friendly web interfaces.
+- 🌱 Currently improving my skills in **TypeScript** and **Flutter**.
+- 🤝 Open to collaboration on beginner-friendly and front-end projects.
 
-<img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" min-width="400px" max-width="400px" width="400px" align="right" alt="Computador iuriCode">
+## 🛠️ Languages and tools
 
-#### Main Stack:
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=html"/>](https://developer.mozilla.org/en-US/docs/Web/HTML)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=css"/>](https://developer.mozilla.org/en-US/docs/Web/CSS)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=js"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=react"/>](https://react.dev/)
+<img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" min-width="320px" max-width="320px" width="320px" align="right" alt="Computer illustration">
 
+### Main stack
 
-#### Studying in this moment:
-  <!--[<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=sass"/>]<!--(https://sass-lang.com/)-->
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=ts"/>](https://www.typescriptlang.org/)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=flutter"/>](https://flutter.dev/)
-<!--[<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=mysql"/>]<!--(https://www.mysql.com/)-->
+[<img height="48" width="48" alt="HTML" src="https://skillicons.dev/icons?i=html" />](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[<img height="48" width="48" alt="CSS" src="https://skillicons.dev/icons?i=css" />](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[<img height="48" width="48" alt="JavaScript" src="https://skillicons.dev/icons?i=js" />](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[<img height="48" width="48" alt="React" src="https://skillicons.dev/icons?i=react" />](https://react.dev/)
 
-#### Tools:
+### Currently learning
 
-  <!--[<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=figma"/>]<!--(https://www.figma.com/)-->
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=vscode"/>](https://code.visualstudio.com/)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=github"/>](https://github.com/)
-  [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=git"/>](https://git-scm.com/)
+[<img height="48" width="48" alt="TypeScript" src="https://skillicons.dev/icons?i=ts" />](https://www.typescriptlang.org/)
+[<img height="48" width="48" alt="Flutter" src="https://skillicons.dev/icons?i=flutter" />](https://flutter.dev/)
 
-<br>
+### Development tools
 
-<!--## Academic Background:
+[<img height="48" width="48" alt="VS Code" src="https://skillicons.dev/icons?i=vscode" />](https://code.visualstudio.com/)
+[<img height="48" width="48" alt="GitHub" src="https://skillicons.dev/icons?i=github" />](https://github.com/)
+[<img height="48" width="48" alt="Git" src="https://skillicons.dev/icons?i=git" />](https://git-scm.com/)
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://media.licdn.com/dms/image/C4E0BAQG5HFi6nWrpQg/company-logo_200_200/0/1655119369480/grupo_uninter_logo?e=1709164800&v=beta&t=A_gJyj3OZmT1JZNQcxaIJY67jzxMEJMvcpxyq1CwmS0"/>](https://www.uninter.com/)
-**Software Engineering Undergraduate** \
-[**UNINTER**](https://www.uninter.com/)  • In progress\
-Skills: `Agile Methodologies` `Requirements Engineering` `Software Architecture` `Professional Ethics`
-`Project Management` `Software Development` `Software Security` `Software Quality`
+<br clear="right"/>
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://yt3.googleusercontent.com/rObOEbK1sg50-EG5bF6XWqtUMS5FHsFMA5bOl50UwrXnezjLqovTdtPK6Ql9V-4jGkasyOXs1g=s900-c-k-c0x00ffffff-no-rj"/>](https://www.onebitcode.com/)
-**Full Stack Developer** \
-[**One Bit Code**](https://www.onebitcode.com/) • In progress \
-Skills: `HTML5` `CSS3` `SASS` `Flexbox` `GRID` `Bootstrap` `JavaScript` `Git` `GitHub` `TypeScript` `PostgreSQL` `NodeJs` `ExpressJS` `NextJs`
-`Bulma` `MongoDB` `ElectronJS`-->
+## 📫 Contact
 
-<br>
-
-## Contact me:
 <div>
-<a href="https://www.instagram.com/jairguev27/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-<a href="https://twitter.com/guevara_a1/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-Twitter-%231DA1F2?style=for-the-badge&logo=twitter&logoColor=white" target="_blank"></a>
-<!--<a href = "mailto: contatojacquelineatae@gmail.com"><img loading="lazy" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/jacquelineatae/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  --> 
+  <a href="https://www.instagram.com/jairguev27/" target="_blank">
+    <img loading="lazy" src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  </a>
+  <a href="https://twitter.com/guevara_a1/" target="_blank">
+    <img loading="lazy" src="https://img.shields.io/badge/-Twitter-%231DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter/X">
+  </a>
 </div>
 
+---
 
-------
+⭐ Thanks for visiting my profile!
