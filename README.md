@@ -149,31 +149,51 @@ src/
 
 ---
 
-## GitHub Stats
+## 🔨 Currently Building
+
+> *Active project — in development as of 2026*
+
+**⚾ Baseball Stadium Ticketing System** — A full POS for a real stadium, running on a private network VM. Currently implementing the Ticket Sales module: cashier session management, barcode generation, and the entry validation flow with barcode scanner integration.
+
+`#dotnet` `#angular21` `#primeng` `#sqlserver` `#docker` `#jwt`
+
+---
+
+## 🌐 Portfolio
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Jguevara99&show_icons=true&theme=radical&hide_border=true&count_private=true" />
-  <img width="49%" src="https://streak-stats.demolab.com/?user=Jguevara99&theme=radical&hide_border=true" />
-</div>
 
-<div align="center">
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jguevara99&layout=compact&theme=radical&hide_border=true&langs_count=8" />
+[![Portfolio](https://img.shields.io/badge/Portfolio-portafolio--kappa--six--51.vercel.app-3670ff?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-kappa-six-51.vercel.app/)
+
 </div>
 
 ---
 
-## Trophies
+## 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Jguevara99&theme=radical&no-frame=true&no-bg=true&margin-w=6&row=1" />
+  <img height="195px" src="https://github-stats-alpha.vercel.app/api?username=Jguevara99&cc=000&tc=ff6ec7&ic=fff&bc=000" />
+  <img height="195px" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Jguevara99&theme=radical" />
+</div>
+
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Jguevara99&theme=radical" />
 </div>
 
 ---
 
-## Contribution Graph
+## 🏆 Trophies
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Jguevara99&theme=react-dark&hide_border=true&area=true" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Jguevara99&theme=radical&no-frame=true&no-bg=true&margin-w=6&column=7" />
+</div>
+
+---
+
+## 📈 Contribution Graph
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Jguevara99&theme=react-dark&hide_border=true&area=true&color=ff6ec7&line=3670ff&point=ffffff" />
 </div>
 
 ---
