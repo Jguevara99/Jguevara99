@@ -10,65 +10,55 @@
 
 ## Who I Am
 
-Full Stack Developer with **4+ years of experience** designing and shipping production systems. I build backend APIs and Angular frontends for enterprise and institutional environments — systems that handle real operational complexity, run on private networks, and stay maintainable past the first deploy.
+Full Stack Developer with **3+ years of experience** building production systems across different teams and contexts.
 
-Currently at **INETER** (Nicaragua) building internal tools with **.NET + Razor**. On the side, leading architecture on a full **stadium ticketing POS** — 7 modules, Docker deployment, barcode validation, on-premise network.
+At **INETER** *(Feb 2023 – present)* — a technical-scientific institution in Nicaragua — I develop internal tools with **.NET and Razor**: operational workflows, data management and institutional reporting.
+
+In parallel, I collaborate with a separate development team on a **baseball stadium ticketing POS** — a full multi-module system built with **.NET Core 10 + Angular 21**, deployed on a private network VM with Docker. Independent project, different team, different stack.
 
 ---
 
 ## 📍 Current & Past Systems
 
+**💼 INETER** *(Feb 2023 – present · Full-time)*
+
 | System | What it does | Stack |
 |---|---|---|
-| ⚾ **Stadium Ticketing POS** | Full POS for a baseball stadium — events, seating, cashier sessions, barcode tickets, entry validation. Runs on a private VM, no internet dependency. | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
-| 🏛️ **INETER Internal Tools** | Institutional workflows, data management and reporting for a government technical org | .NET · Razor · SQL Server |
+| 🏛️ **Institutional Management Apps** | Internal workflows, data management and reporting at institutional scale | .NET · Razor · SQL Server |
+
+**🤝 External Team Projects** *(independent collaborations)*
+
+| System | What it does | Stack |
+|---|---|---|
+| ⚾ **Baseball Stadium Ticketing POS** | Full POS for a stadium — events, seating maps, cashier sessions, barcode tickets, entry validation. Private network deployment | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
 | 🔐 **Auth & Access Module** | JWT auth with role/claims, refresh token flow, Angular guards, policy-based authorization | .NET Identity · JWT · Angular |
-| 📋 **Enterprise Modules** | Multi-module apps built with teams — asset tracking, inventory, approval workflows | .NET · Angular · SQL Server |
+| 📋 **Enterprise Modules** | Multi-module apps — asset tracking, inventory control, approval workflows | .NET · Angular · SQL Server |
 
 ### Stadium POS — Architecture at a Glance
 
 ```
 Private Network VM
-├── .NET Core 10 API     → Layered: Domain / Application / Infrastructure / API
-├── Angular 21 SPA       → Feature modules, lazy loading, JWT interceptors
-├── SQL Server           → Docker container, EF Core migrations
-└── Reverse Proxy        → Internal routing, no public exposure
+├── .NET Core 10 API  →  Domain / Application / Infrastructure / API
+├── Angular 21 SPA    →  Feature modules, lazy loading, JWT interceptors
+├── SQL Server        →  Docker container, EF Core migrations
+└── Reverse Proxy     →  Internal routing, no public exposure
 ```
 
-- On-premise deployment — no cloud dependency, air-gapped network
-- Role-based access: Admin · Sales Operator · Manager
-- Barcode generation + real-time scanner validation at entry gates
-- Pricing engine: `Base Event Price + Section Addon ± Discounts + IVA`
-- PDF/Excel reporting per cashier, section, and event
+On-premise · Role-based access (Admin / Operator / Manager) · Barcode validation at entry gates · `Base Price + Section Addon ± Discounts + IVA` · PDF/Excel reports per cashier and event
 
 ---
 
-## ⚙️ Engineering Principles
+## ⚙️ How I Build
 
-```
-Solution/
-├── Domain/          # Entities, value objects
-├── Application/     # Use cases, DTOs, validators
-├── Infrastructure/  # EF Core, repos, file storage
-└── API/             # Controllers, middleware, DI
-```
-
-- **Repository pattern** — business logic never touches DbContext directly
-- **DTOs at every boundary** — domain models don't leak into responses
-- **EF Core Migrations** per environment — schema changes tracked, never manual in prod
-- **Global exception middleware** — consistent error shape across all endpoints
-- **API versioning** via route prefix — consumers don't break on updates
-- **xUnit + Moq** on the Application layer — use cases tested in isolation
-
-```
-src/
-├── core/       # Auth, guards, interceptors
-├── shared/     # Reusable components, pipes
-└── features/   # Lazy-loaded feature modules
-```
-
-- HTTP Interceptors handle JWT injection and error normalization globally
-- Reactive Forms for complex modules, services own state, components stay lean
+| Layer | Approach |
+|---|---|
+| **Backend structure** | Clean layered architecture — Domain · Application · Infrastructure · API |
+| **Data access** | Repository pattern — business logic never touches DbContext directly |
+| **API contracts** | DTOs at every boundary, versioned routes (`/api/v1/`), Swagger on every project |
+| **Auth** | JWT + ASP.NET Identity — role/claims-based, refresh tokens, middleware validation |
+| **Reliability** | Global exception middleware, EF Core Migrations per environment, never manual in prod |
+| **Testing** | xUnit + Moq on the Application layer — use cases tested in isolation from infrastructure |
+| **Frontend** | Feature modules, lazy loading, HTTP Interceptors for JWT + error handling, Reactive Forms |
 
 ---
 
@@ -140,8 +130,5 @@ Open to **remote opportunities** in the .NET + Angular space — full-time or fr
 ---
 
 <div align="center">
-  <sub><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></sub>
-</div>
-
   <sub><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></sub>
 </div>
