@@ -10,7 +10,7 @@
 
 ## Who I Am
 
-Full Stack Developer with **3+ years of experience** building production systems across different teams and contexts.
+Full Stack Developer with **4+ years of experience** building production systems across different teams and contexts.
 
 At **INETER** *(Feb 2023 – present)* — a technical-scientific institution in Nicaragua — I develop internal tools with **.NET and Razor**: operational workflows, data management and institutional reporting.
 
@@ -44,8 +44,6 @@ Private Network VM
 └── Reverse Proxy     →  Internal routing, no public exposure
 ```
 
-On-premise · Role-based access (Admin / Operator / Manager) · Barcode validation at entry gates · `Base Price + Section Addon ± Discounts + IVA` · PDF/Excel reports per cashier and event
-
 ---
 
 ## ⚙️ How I Build
@@ -57,7 +55,6 @@ On-premise · Role-based access (Admin / Operator / Manager) · Barcode validati
 | **API contracts** | DTOs at every boundary, versioned routes (`/api/v1/`), Swagger on every project |
 | **Auth** | JWT + ASP.NET Identity — role/claims-based, refresh tokens, middleware validation |
 | **Reliability** | Global exception middleware, EF Core Migrations per environment, never manual in prod |
-| **Testing** | xUnit + Moq on the Application layer — use cases tested in isolation from infrastructure |
 | **Frontend** | Feature modules, lazy loading, HTTP Interceptors for JWT + error handling, Reactive Forms |
 
 ---
@@ -88,9 +85,6 @@ On-premise · Role-based access (Admin / Operator / Manager) · Barcode validati
 ![DevExpress](https://img.shields.io/badge/DevExpress-FF7200?style=for-the-badge&logo=devexpress&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
 
-**Testing**
-![xUnit](https://img.shields.io/badge/xUnit-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![Moq](https://img.shields.io/badge/Moq-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 **Also worked with**
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
