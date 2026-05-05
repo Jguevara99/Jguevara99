@@ -10,11 +10,17 @@
 
 ## Who I Am
 
-Full Stack Developer with experience across enterprise and institutional systems. I work at **INETER** — a technical-scientific institution in Nicaragua — where I develop internal applications using **.NET and Razor**, handling real operational workflows and data management at institutional scale.
+Full Stack Developer specialized in **enterprise and institutional software**.
 
-Outside of INETER, I collaborate on larger full-stack projects with **.NET APIs and Angular**, covering everything from architecture decisions to production deployment. My current focus project is a multi-module **baseball stadium ticketing system** being built on **.NET Core 10 + Angular 21**, deployed on a private network VM with Docker.
+At **INETER** (Nicaragua), I build internal systems with **.NET + Razor**, focused on:
+- operational workflows,
+- institutional data management,
+- reporting pipelines,
+- and production reliability.
 
-I care about how systems are structured before a line of code is written — layer separation, API design, auth flows, and building things that hold up in production.
+Outside INETER, I collaborate on full-stack platforms using **.NET APIs + Angular**, covering architecture decisions, authentication design, module boundaries, and production deployment.
+
+> Current focus: multi-module **Baseball Stadium Ticketing System** built with **.NET Core 10 + Angular 21**, deployed on a private network VM with Docker.
 
 ---
 
@@ -22,30 +28,31 @@ I care about how systems are structured before a line of code is written — lay
 
 | System | Context | Stack |
 |---|---|---|
-| 🏛️ **Institutional Management Apps** | Internal tools at INETER — workflows, data management, reporting for a technical-scientific org | .NET · Razor · SQL Server |
-| ⚾ **Baseball Stadium Ticketing System** | Full POS for a stadium: events, seating maps, barcode ticket validation, cashier sessions, reports. Private network deployment | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
-| 🔐 **Auth & Access Layer** | JWT-based auth with role and claims management. Refresh token flow, Angular route guards, policy-based authorization on .NET | .NET Identity · JWT · Angular Guards |
-| 📋 **Collaborative Enterprise Modules** | Multi-module systems built with teams — approval workflows, inventory control, asset tracking | .NET · Angular · SQL Server |
+| 🏛️ **Institutional Management Apps** | Internal tools at INETER — workflows, data management, and reporting for a technical-scientific institution | .NET · Razor · SQL Server |
+| ⚾ **Baseball Stadium Ticketing System** | End-to-end stadium POS: events, seat maps, ticket validation, cashier sessions, and reporting | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
+| 🔐 **Auth & Access Layer** | JWT auth with roles/claims, refresh token flow, route guards, and policy-based authorization | .NET Identity · JWT · Angular Guards |
+| 📋 **Collaborative Enterprise Modules** | Team-built modules: approvals, inventory control, and asset tracking | .NET · Angular · SQL Server |
 
 ---
 
 ## Stadium Ticketing System — Architecture Snapshot
 
-> *Current project. In development. Private network deployment.*
+> *Current project. In development. Private network deployment (on-premise).*  
+> *Designed to operate without internet dependency inside stadium infrastructure.*
 
-A multi-module POS for baseball stadiums, designed to run on a local VM within the stadium's private network. No internet dependency — everything runs on-premise.
+### 7 Modules in Scope
 
-**7 modules in scope:**
 - 🗓️ **Events** — event catalog, team management, base pricing per event
-- 🗺️ **Locations** — stadium seating map, sections/rows/seats, per-section pricing addons
-- 🎫 **Ticket Sales** — cashier session open/close, seat selection, IVA, barcode ticket generation, courtesy tickets
+- 🗺️ **Locations** — stadium map, sections/rows/seats, per-section pricing addons
+- 🎫 **Ticket Sales** — cashier open/close sessions, seat selection, IVA, barcode ticket generation, courtesy tickets
 - 📄 **Documents** — logo/image storage, auto-compression, local VM storage
-- 📊 **Reports** — sales by section, by event type, by cashier; PDF + Excel export; real-time dashboards
+- 📊 **Reports** — sales by section/event type/cashier, PDF + Excel exports, near real-time dashboards
 - 🔒 **Security** — user/role management, audit trails, session policies
-- 📡 **Entry Validation** — barcode scanner integration, real-time ticket validation, offline sync
+- 📡 **Entry Validation** — scanner integration, real-time validation, offline sync strategies
 
-**Infrastructure:**
-```
+### Infrastructure
+
+```text
 Private Stadium Network
 └── VM (Production)
     ├── .NET Core 10 API
@@ -59,8 +66,9 @@ Private Stadium Network
     └── Test Database
 ```
 
-**Pricing logic:**
-```
+### Pricing Logic
+
+```text
 Final Price = Event Base Price + Section Price Addon + Discounts - IVA
 ```
 
@@ -70,9 +78,9 @@ Final Price = Event Base Price + Section Price Addon + Discounts - IVA
 
 ### Backend (.NET)
 
-Layered architecture with clean separation between domain logic, application services, and infrastructure. At INETER I work primarily with Razor for server-rendered views; on API projects I structure around RESTful endpoints with proper contracts.
+Layered architecture with clear separation between business rules, application orchestration, infrastructure concerns, and API surface.
 
-```
+```text
 Solution/
 ├── Domain/          # Entities, value objects
 ├── Application/     # Use cases, DTOs, validators, interfaces
@@ -80,18 +88,18 @@ Solution/
 └── API/             # Controllers, middleware, DI config
 ```
 
-- **Repository pattern** — business logic never touches DbContext directly.
-- **DTOs at every boundary** — domain models don't leak into responses.
-- **JWT authentication** with ASP.NET Core Identity: role/claims-based authorization, token refresh, middleware-level validation.
-- **Global exception handling** via middleware — consistent error responses across all endpoints.
-- **Swagger/OpenAPI** on every API project — documented, versioned, consumer-ready.
-- **Unit testing** on the Application layer with **xUnit + Moq**.
+- **Repository pattern** — business rules do not access DbContext directly.
+- **DTO boundaries** — domain entities never leak to transport responses.
+- **JWT + ASP.NET Core Identity** — role/claims authorization with refresh token lifecycle.
+- **Global exception middleware** — standardized API error contracts.
+- **Swagger/OpenAPI** — versioned, consumer-ready endpoint documentation.
+- **Application-layer testing** — unit tests with **xUnit + Moq**.
 
 ### Frontend (Angular)
 
-Feature-based module organization, lazy loading by default, smart/dumb component split.
+Feature-driven module organization with lazy loading and clear split of responsibilities.
 
-```
+```text
 src/
 ├── core/            # Auth, guards, interceptors, global services
 ├── shared/          # Reusable components, pipes, directives
@@ -101,10 +109,10 @@ src/
     └── reports/
 ```
 
-- **HTTP Interceptors** handle JWT injection and global error normalization.
-- **Route Guards** enforce role-based access at routing level.
-- **Reactive Forms** for complex modules — template-driven only for trivial cases.
-- **Services own state** — components stay lean and presentational.
+- **HTTP Interceptors** for JWT attachment and global error normalization.
+- **Route Guards** for role-based navigation control.
+- **Reactive Forms** for complex transactional workflows.
+- **Service-centric state** so UI components remain lean and focused.
 
 ---
 
@@ -153,7 +161,10 @@ src/
 
 > *Active project — in development as of 2026*
 
-**⚾ Baseball Stadium Ticketing System** — A full POS for a real stadium, running on a private network VM. Currently implementing the Ticket Sales module: cashier session management, barcode generation, and the entry validation flow with barcode scanner integration.
+**⚾ Baseball Stadium Ticketing System** — full POS running on a private network VM. Current implementation focus:
+- cashier session lifecycle,
+- barcode generation pipeline,
+- entry validation flow with scanner integration.
 
 `#dotnet` `#angular21` `#primeng` `#sqlserver` `#docker` `#jwt`
 
@@ -200,7 +211,7 @@ src/
 
 ## Let's Talk
 
-If you're working on something in the **.NET + Angular** space — enterprise apps, system design, architecture decisions — I'm open to a conversation.
+If you're building in the **.NET + Angular** space — enterprise apps, system design, architecture decisions — I'm open to collaboration.
 
 <div align="center">
 
