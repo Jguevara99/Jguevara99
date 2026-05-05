@@ -10,201 +10,127 @@
 
 ## Who I Am
 
-Full Stack Developer with experience across enterprise and institutional systems. I work at **INETER** — a technical-scientific institution in Nicaragua — where I develop internal applications using **.NET and Razor**, handling real operational workflows and data management at institutional scale.
+Full Stack Developer with **4+ years of experience** designing and shipping production systems. I build backend APIs and Angular frontends for enterprise and institutional environments — systems that handle real operational complexity, run on private networks, and stay maintainable past the first deploy.
 
-Outside of INETER, I collaborate on larger full-stack projects with **.NET APIs and Angular**, covering everything from architecture decisions to production deployment. My current focus project is a multi-module **baseball stadium ticketing system** being built on **.NET Core 10 + Angular 21**, deployed on a private network VM with Docker.
-
-I care about how systems are structured before a line of code is written — layer separation, API design, auth flows, and building things that hold up in production.
+Currently at **INETER** (Nicaragua) building internal tools with **.NET + Razor**. On the side, leading architecture on a full **stadium ticketing POS** — 7 modules, Docker deployment, barcode validation, on-premise network.
 
 ---
 
-## What I Build
+## 📍 Current & Past Systems
 
-| System | Context | Stack |
+| System | What it does | Stack |
 |---|---|---|
-| 🏛️ **Institutional Management Apps** | Internal tools at INETER — workflows, data management, reporting for a technical-scientific org | .NET · Razor · SQL Server |
-| ⚾ **Baseball Stadium Ticketing System** | Full POS for a stadium: events, seating maps, barcode ticket validation, cashier sessions, reports. Private network deployment | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
-| 🔐 **Auth & Access Layer** | JWT-based auth with role and claims management. Refresh token flow, Angular route guards, policy-based authorization on .NET | .NET Identity · JWT · Angular Guards |
-| 📋 **Collaborative Enterprise Modules** | Multi-module systems built with teams — approval workflows, inventory control, asset tracking | .NET · Angular · SQL Server |
+| ⚾ **Stadium Ticketing POS** | Full POS for a baseball stadium — events, seating, cashier sessions, barcode tickets, entry validation. Runs on a private VM, no internet dependency. | .NET Core 10 · Angular 21 · PrimeNG · SQL Server · Docker |
+| 🏛️ **INETER Internal Tools** | Institutional workflows, data management and reporting for a government technical org | .NET · Razor · SQL Server |
+| 🔐 **Auth & Access Module** | JWT auth with role/claims, refresh token flow, Angular guards, policy-based authorization | .NET Identity · JWT · Angular |
+| 📋 **Enterprise Modules** | Multi-module apps built with teams — asset tracking, inventory, approval workflows | .NET · Angular · SQL Server |
+
+### Stadium POS — Architecture at a Glance
+
+```
+Private Network VM
+├── .NET Core 10 API     → Layered: Domain / Application / Infrastructure / API
+├── Angular 21 SPA       → Feature modules, lazy loading, JWT interceptors
+├── SQL Server           → Docker container, EF Core migrations
+└── Reverse Proxy        → Internal routing, no public exposure
+```
+
+- On-premise deployment — no cloud dependency, air-gapped network
+- Role-based access: Admin · Sales Operator · Manager
+- Barcode generation + real-time scanner validation at entry gates
+- Pricing engine: `Base Event Price + Section Addon ± Discounts + IVA`
+- PDF/Excel reporting per cashier, section, and event
 
 ---
 
-## Stadium Ticketing System — Architecture Snapshot
-
-> *Current project. In development. Private network deployment.*
-
-A multi-module POS for baseball stadiums, designed to run on a local VM within the stadium's private network. No internet dependency — everything runs on-premise.
-
-**7 modules in scope:**
-- 🗓️ **Events** — event catalog, team management, base pricing per event
-- 🗺️ **Locations** — stadium seating map, sections/rows/seats, per-section pricing addons
-- 🎫 **Ticket Sales** — cashier session open/close, seat selection, IVA, barcode ticket generation, courtesy tickets
-- 📄 **Documents** — logo/image storage, auto-compression, local VM storage
-- 📊 **Reports** — sales by section, by event type, by cashier; PDF + Excel export; real-time dashboards
-- 🔒 **Security** — user/role management, audit trails, session policies
-- 📡 **Entry Validation** — barcode scanner integration, real-time ticket validation, offline sync
-
-**Infrastructure:**
-```
-Private Stadium Network
-└── VM (Production)
-    ├── .NET Core 10 API
-    ├── Angular 21 Frontend
-    ├── SQL Server (Docker)
-    ├── Reverse Proxy
-    └── Local Document Storage
-
-└── Docker Containers (Testing/Staging)
-    ├── Test API
-    └── Test Database
-```
-
-**Pricing logic:**
-```
-Final Price = Event Base Price + Section Price Addon + Discounts - IVA
-```
-
----
-
-## Engineering Approach
-
-### Backend (.NET)
-
-Layered architecture with clean separation between domain logic, application services, and infrastructure. At INETER I work primarily with Razor for server-rendered views; on API projects I structure around RESTful endpoints with proper contracts.
+## ⚙️ Engineering Principles
 
 ```
 Solution/
 ├── Domain/          # Entities, value objects
-├── Application/     # Use cases, DTOs, validators, interfaces
-├── Infrastructure/  # EF Core, repositories, file storage, external services
-└── API/             # Controllers, middleware, DI config
+├── Application/     # Use cases, DTOs, validators
+├── Infrastructure/  # EF Core, repos, file storage
+└── API/             # Controllers, middleware, DI
 ```
 
-- **Repository pattern** — business logic never touches DbContext directly.
-- **DTOs at every boundary** — domain models don't leak into responses.
-- **JWT authentication** with ASP.NET Core Identity: role/claims-based authorization, token refresh, middleware-level validation.
-- **Global exception handling** via middleware — consistent error responses across all endpoints.
-- **Swagger/OpenAPI** on every API project — documented, versioned, consumer-ready.
-- **Unit testing** on the Application layer with **xUnit + Moq**.
-
-### Frontend (Angular)
-
-Feature-based module organization, lazy loading by default, smart/dumb component split.
+- **Repository pattern** — business logic never touches DbContext directly
+- **DTOs at every boundary** — domain models don't leak into responses
+- **EF Core Migrations** per environment — schema changes tracked, never manual in prod
+- **Global exception middleware** — consistent error shape across all endpoints
+- **API versioning** via route prefix — consumers don't break on updates
+- **xUnit + Moq** on the Application layer — use cases tested in isolation
 
 ```
 src/
-├── core/            # Auth, guards, interceptors, global services
-├── shared/          # Reusable components, pipes, directives
-└── features/
-    ├── events/
-    ├── ticketing/
-    └── reports/
+├── core/       # Auth, guards, interceptors
+├── shared/     # Reusable components, pipes
+└── features/   # Lazy-loaded feature modules
 ```
 
-- **HTTP Interceptors** handle JWT injection and global error normalization.
-- **Route Guards** enforce role-based access at routing level.
-- **Reactive Forms** for complex modules — template-driven only for trivial cases.
-- **Services own state** — components stay lean and presentational.
+- HTTP Interceptors handle JWT injection and error normalization globally
+- Reactive Forms for complex modules, services own state, components stay lean
 
 ---
 
-## Tech Stack
+## 🛠️ Stack
 
-### ⚙️ Backend
+**Backend**
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![Razor](https://img.shields.io/badge/Razor-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![Entity Framework](https://img.shields.io/badge/Entity%20Framework-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![EF Core](https://img.shields.io/badge/EF%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 
-### 🌐 Frontend
+**Frontend**
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white)
-
-### 🎨 UI / Design
 ![PrimeNG](https://img.shields.io/badge/PrimeNG-DD0031?style=for-the-badge&logo=primeng&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### 🧪 Testing
+**Infra & Tools**
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![DevExpress](https://img.shields.io/badge/DevExpress-FF7200?style=for-the-badge&logo=devexpress&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
+
+**Testing**
 ![xUnit](https://img.shields.io/badge/xUnit-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![Moq](https://img.shields.io/badge/Moq-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
-### 🔁 Also in the toolbox
+**Also worked with**
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-
-### 🧰 Tools
-![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![DevExpress](https://img.shields.io/badge/DevExpress-FF7200?style=for-the-badge&logo=devexpress&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-
----
-
-## 🔨 Currently Building
-
-> *Active project — in development as of 2026*
-
-**⚾ Baseball Stadium Ticketing System** — A full POS for a real stadium, running on a private network VM. Currently implementing the Ticket Sales module: cashier session management, barcode generation, and the entry validation flow with barcode scanner integration.
-
-`#dotnet` `#angular21` `#primeng` `#sqlserver` `#docker` `#jwt`
-
----
-
-## 🌐 Portfolio
-
-<div align="center">
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-portafolio--kappa--six--51.vercel.app-3670ff?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-kappa-six-51.vercel.app/)
-
-</div>
 
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="195px" src="https://github-stats-alpha.vercel.app/api?username=Jguevara99&cc=000&tc=ff6ec7&ic=fff&bc=000" />
-  <img height="195px" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Jguevara99&theme=radical" />
-</div>
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Jguevara99&theme=radical" />
-</div>
-
----
-
-## 🏆 Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Jguevara99&theme=radical&no-frame=true&no-bg=true&margin-w=6&column=7" />
-</div>
-
----
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Jguevara99&theme=react-dark&hide_border=true&area=true&color=ff6ec7&line=3670ff&point=ffffff" />
+  <img height="180px" src="https://github-stats-alpha.vercel.app/api?username=Jguevara99&cc=000&tc=ff6ec7&ic=fff&bc=000" />
+  <img height="180px" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Jguevara99&theme=radical" />
 </div>
 
 ---
 
 ## Let's Talk
 
-If you're working on something in the **.NET + Angular** space — enterprise apps, system design, architecture decisions — I'm open to a conversation.
+Open to **remote opportunities** in the .NET + Angular space — full-time or freelance. Based in Nicaragua.
 
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jairo-guevara)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Vercel-3670ff?style=for-the-badge&logo=vercel&logoColor=white)](https://portafolio-kappa-six-51.vercel.app/)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/jairguev27/)
 [![X](https://img.shields.io/badge/X-%23000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/guevara_a1/)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/jairoantonio.guevaraampie)
@@ -214,5 +140,8 @@ If you're working on something in the **.NET + Angular** space — enterprise ap
 ---
 
 <div align="center">
+  <sub><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></sub>
+</div>
+
   <sub><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></sub>
 </div>
