@@ -10,7 +10,7 @@
 
 ## Who I Am
 
-Full Stack Developer with **4+ years of experience** building production systems across different teams and contexts.
+Full Stack Developer with **3+ years of experience** building production systems across different teams and contexts.
 
 At **INETER** *(Feb 2023 – present)* — a technical-scientific institution in Nicaragua — I develop internal tools with **.NET and Razor**: operational workflows, data management and institutional reporting.
 
